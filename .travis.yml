@@ -1,0 +1,10 @@
+language: swift
+osx_image: xcode11.6
+xcode_workspace: TestTravis.xcworkspace # path to your xcworkspace file
+xcode_scheme: TestTravis
+xcode_destination: platform=iOS Simulator,OS=13.6,name=iPhone 8
+cache:
+  directories:
+  - $HOME/.m2
+script: 
+ - xcodebuild test -workspace 'TestTravis.xcworkspace' -scheme 'TestTravis' -destination 'platform=iOS Simulator,OS=13.6,name=iPhone 8'
